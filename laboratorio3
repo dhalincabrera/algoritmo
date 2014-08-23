@@ -1,0 +1,86 @@
+// convertirdecimal.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int decimalbase(long int idec,int numbase);
+char chexa[]={'A','B','C','D','E','F'};
+char result[100];
+int main(int arge,char *argv[])
+{
+  int num, base;
+  cout<<"ingrese el numero en base decimal:";
+  cin>>num;
+  cout<<"Ingrese la base a convertir:";
+  cin>>base;
+  cout<<"el numero es:";
+  for(int i=0; i<decimalbase(14,2);i++)
+	  cout<<"result[i]:";
+	  cout<<endl;
+      system("PAUSE");
+	  return 0;
+}int decimalbase(long int idec,int numbase)
+{ 
+	char base_digis[16]=
+	{'0','1','2','3','4','5','6','7',
+	'8','9','A','B','C','D','E','F'};
+	 int convertir_numero[64];
+	 int next_digit, index=0, i=0;
+	   
+	    while(idec!=0)
+		{
+			convertir_numero[index]=idec%numbase;
+			idec/=numbase;
+			index++;
+		}
+		--index;
+		for(;index>=0;index--)
+		{
+			result[i]=(base_digits[convertir_numero[index]]);
+			i++;
+		}
+		return i;
+}
+
+
+
+
+
+
+// factorial.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include"conio.h"
+#include"math.h"
+
+using namespace std;
+
+float serie(float x, int n);
+void main()
+{int n;
+ float x,sol;
+cout<<"Ingrese n:";
+cin>>n;
+cout<<"ingrese x:";
+cin>>x;
+sol=serie(x,n);
+cout<<"la suma es:"<<sol;
+getch();
+	
+}
+float serie(float x, int n)
+{int s,sig,i;
+  s=1;
+  sig=+1;
+  for(i=1;i<=n;i++)
+	  s=s+sig*(pow(x,(2*i-1)))/factorial(2*i-1);
+      sig=-sig;
+  return (s);
+}
+
