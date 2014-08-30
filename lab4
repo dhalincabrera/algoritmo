@@ -1,0 +1,80 @@
+// menu.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <stdlib.h>
+
+
+using namespace std;
+
+void cargarvec (int vec[], int N);
+void mostrarvec(int vec[], int N);
+void intercambiar(int vec[], int N);
+void clasivec (int vec[], int N);
+   void main ()
+{ int N, opcion, vec[100];
+
+ cout<<"            MENU            ";
+ cout<<endl<<"1.cargar vector:";
+ cout<<endl<<"2.mostrar vector:";
+ cout<<endl<<"3.intercambiar vector:";
+ cout<<endl<<"4.calsificar vector:"<<endl;
+ cout<<"elija una opcion:";
+ do{
+   cin>>opcion;
+   switch(opcion)
+   {
+	   case 1:cargarvec(vec,N);
+		   break;
+	   case 2:mostrarvec(vec,N);
+		   break;
+	   case 3:intercambiar(vec,N);
+		   break;
+	   case 4:clasivec(vec,N);
+		   break;
+   }
+ }while(opcion != 0);
+    getch();
+	
+}
+
+void cargarvec (int vec[], int N)
+{int i;
+  for(i=0;i<N;i++)
+    {
+		cout<<"ingrese el valor del vec["<<i<<"]:";
+        cin>>vec[i];
+  }
+}
+
+void mostrarvec(int vec[], int N)
+{int i;
+   for(i=0;i<N;i++)
+	   cout<<vec[i];
+}
+
+void intercambiar(int vec[], int N)
+{int i,aux,j;
+ j=N-1;
+ for(i=0;i<N/2;i++)
+ {
+	 aux=vec[i];
+	 vec[i]=vec[j];
+	 vec[j]=aux;
+	 j--;
+ }
+}
+
+void clasivec (int vec[], int tam)
+{int i, aux,j;
+   for(i=0;i<tam-1;i++)
+	   for(j=i+1;j<tam;j++)
+	      if (vec[i]<vec[j])
+		  {
+			  aux=vec[i];
+			  vec[i]=vec[j];
+			  vec[j]=aux;
+		  }
+}
