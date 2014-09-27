@@ -9,55 +9,56 @@
 using namespace std;
 
 struct vector{
-	int vec[N]
+	int vec[N];
 };
 
-void cargar(int N, vector v[N]);
-void invertir(int N, vector v[N]);
-void mostrar(int N, vector v[N]);
+void cargar(int n, vector v[N]);
+void invertir(int n, vector v[N]);
+void mostrar(int n, vector v[N]);
 void main()
-{ int N;
+{ int n;
 	vector v[N];
 	cout<<"ingresar el numero de elementos del array:";
-	cin>>N;
-	cargar(N,v);
-	invertir (N,v);
-	mostrar (N,v);
+	cin>>n;
+	cargar(n,v);
+	invertir (n,v);
+	mostrar (n,v);
 
 	getch();
 }
 
 
-void cargar(int N, vector v[N])
+void cargar(int n, vector v[N])
 {
-	for(i=0;i<N;i++)
-		for(j=0;j<N;j++)
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
 		{
 			cout<<"ingresasr v["<<i<<"].["<<j<<"]=";
 		    cin>>v[i].vec[j];
 		}
 }
 
-void invertir(int N,vector v[N])
+void invertir(int n,vector v[N])
 { int aux;
-	for(i=0;i<N*0.5;i++)
-		for(j=0;j<N;j++)
+	for(int i=0;i<n*0.5;i++)
+		for(int j=0;j<n;j++)
 		{
-			aux=v[N-1].vec[N-1-j];
-			v[N-1].vec[N-1-j]=v[i].vec[j];
+			aux=v[n-1].vec[n-1-j];
+			v[N-1].vec[n-1-j]=v[i].vec[j];
 			v[i].vec[j]=aux;
 			
 		}
 }
 
-void mostrar(int N, vector v[N])
+void mostrar(int n, vector v[N])
 {
-	for(i=0;i<N;i++)
+	for(int i=0;i<n;i++)
 	{
-		for(j=0;j<N;j++)
+		for(int j=0;j<n;j++)
 		{
-			cout<<"ingresasr v["<<i<<"].["<<j<<"]= *;
-		    cout<<v[i].v[j]<<"\t";
+			cout<<"ingresasr v["<<i<<"].["<<j<<"]= ";
+			cout<<v[i].vec6
+				[j]<<"\t";
 		}
 		cout<<"\n";
 	}
