@@ -1,0 +1,64 @@
+// laboratorio5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define N 100
+
+using namespace std;
+
+struct vector{
+	int vec[N]
+};
+
+void cargar(int N, vector v[N]);
+void invertir(int N, vector v[N]);
+void mostrar(int N, vector v[N]);
+void main()
+{ int N;
+	vector v[N];
+	cout<<"ingresar el numero de elementos del array:";
+	cin>>N;
+	cargar(N,v);
+	invertir (N,v);
+	mostrar (N,v);
+
+	getch();
+}
+
+
+void cargar(int N, vector v[N])
+{
+	for(i=0;i<N;i++)
+		for(j=0;j<N;j++)
+		{
+			cout<<"ingresasr v["<<i<<"].["<<j<<"]=";
+		    cin>>v[i].vec[j];
+		}
+}
+
+void invertir(int N,vector v[N])
+{ int aux;
+	for(i=0;i<N*0.5;i++)
+		for(j=0;j<N;j++)
+		{
+			aux=v[N-1].vec[N-1-j];
+			v[N-1].vec[N-1-j]=v[i].vec[j];
+			v[i].vec[j]=aux;
+			
+		}
+}
+
+void mostrar(int N, vector v[N])
+{
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<N;j++)
+		{
+			cout<<"ingresasr v["<<i<<"].["<<j<<"]= *;
+		    cout<<v[i].v[j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
