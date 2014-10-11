@@ -1,0 +1,57 @@
+// laboratorio7.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define   N 100
+
+ using namespace std;
+
+struct Vector
+{
+	int vec[N];
+};
+void generarfibo(Vector vec[N],int n);
+void mostrar(Vector vec[N], int n);
+
+void main()
+{
+	int n;
+	Vector vec[N];
+	do{
+		cout<<"ingrese el tamaño:";
+		cin>>n;
+	}while(n<=0);
+	generarfibo(vec,n),
+    mostrar(vec,n);
+	getch();
+}
+
+void generarfibo(Vector vec[N],int n)
+{
+	int i,j,a=-1,b=1,f=0;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			f=a+b;
+			vec[i].vec[j]=f;
+			a=b;
+			b=f;
+		}
+	}
+}
+
+void mostrar(Vector vec[N], int n)
+{
+	int i,j;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			cout<<vec[i].vec[j]<<" ";
+		}
+		cout<<" ";
+	}
+}
